@@ -5,7 +5,6 @@
 This project implements a **PostgreSQL-based analytics system** to monitor **electric vehicle (EV) battery health, charging behavior, and safety risks using only SQL**. It simulates how backend **telematics platforms** and **Battery Management Systems (BMS)** analyze battery degradation, charging abuse, and thermal stress—without relying on external processing layers.
 All analytics logic is executed **entirely inside PostgreSQL** using relational modeling, triggers, views, CTEs, and time-series analysis.
 
----
 
 ## Table of Contents
 
@@ -19,7 +18,6 @@ All analytics logic is executed **entirely inside PostgreSQL** using relational 
 - [Performance Optimization](#performance-optimization)
 - [Possible Extensions](#possible-extensions)
 
----
 
 ## Problem Statement
 
@@ -35,7 +33,6 @@ The system shows how SQL can be used to:
 - Quantify battery abuse using composite metrics
 - Classify vehicles by degradation risk
 
----
 
 ## System Overview
 
@@ -54,7 +51,6 @@ Key analytics are implemented using:
 
 No external services, scripts, or processing engines are required.
 
----
 
 ## Database Schema
 
@@ -73,7 +69,6 @@ No external services, scripts, or processing engines are required.
 
 Battery faults are **event-driven** and automatically generated when unsafe charging conditions are detected.
 
----
 
 ## Key Features
 
@@ -87,7 +82,6 @@ The schema cleanly separates:
 
 This enables scalable analytics, clean joins, and efficient querying.
 
----
 
 ### Automated Fault Detection
 
@@ -96,7 +90,6 @@ A **PostgreSQL trigger** simulates Battery Management System logic by automatica
 
 This allows real-time detection of unsafe conditions directly at the database level.
 
----
 
 ### Battery Abuse Score
 
@@ -112,7 +105,6 @@ Vehicles are classified into risk categories:
 
 This mirrors how fleet-level EV health monitoring systems prioritize vehicles for inspection.
 
----
 
 ### Synthetic Data Generation
 
@@ -123,7 +115,6 @@ Realistic EV usage data is generated using SQL functions:
 
 This enables meaningful analytics without requiring real vehicle data.
 
----
 
 ## Example Insights
 
@@ -132,7 +123,6 @@ The system enables analysis such as:
 - Overheating events strongly correlate with fault frequency
 - A small subset of vehicles accounts for the majority of critical battery faults
 
----
 
 ## Tech Stack
 
@@ -145,7 +135,6 @@ The system enables analysis such as:
   - Indexes
   - Time-series queries
 
----
 
 ## How to Run
 
@@ -159,7 +148,6 @@ The system enables analysis such as:
 
 All logic runs **entirely inside PostgreSQL**.
 
----
 
 ## Performance Optimization
 
@@ -167,7 +155,6 @@ All logic runs **entirely inside PostgreSQL**.
 - `EXPLAIN ANALYZE` is used to validate query performance
 - Views are designed for efficient aggregation on time-series data
 
----
 
 ## Possible Extensions
 
@@ -176,7 +163,6 @@ All logic runs **entirely inside PostgreSQL**.
 - Machine learning–based **remaining useful life (RUL)** prediction
 - Real-time streaming integration (logical replication / CDC)
 
----
 
 ## License
 
